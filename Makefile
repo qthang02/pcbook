@@ -6,6 +6,7 @@ proto:
         proto/*.proto
 server:
 	go run main.go
+test:
+	go test -cover -race ./...
 
-
-.PHONY: proto server
+.PHONY: proto server test
