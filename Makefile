@@ -5,8 +5,10 @@ gen:
 		--grpc-gateway_out=pb --grpc-gateway_opt=paths=source_relative \
         proto/*.proto
 server:
-	go run main.go
+	go run cmd/server/main.go -port 8080
+client:
+	go run cmd/client/main.go -address 0.0.0.0:8080
 test:
 	go test -cover -race ./...
 
-.PHONY: gen server test
+.PHONY: gen server client test
