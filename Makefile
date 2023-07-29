@@ -1,4 +1,4 @@
-proto:
+gen:
 	rm -f pb/*.go
 	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
         --go-grpc_out=pb --go-grpc_opt=paths=source_relative \
@@ -9,4 +9,4 @@ server:
 test:
 	go test -cover -race ./...
 
-.PHONY: proto server test
+.PHONY: gen server test
